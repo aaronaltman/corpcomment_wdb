@@ -1,14 +1,22 @@
+import { ArrowUpIcon } from "lucide-react";
 import React from "react";
 
 export default function SingleListItem() {
   return (
     <section>
-      <div className="flex flex-row bg-slate-100 gap-5 py-5 px-10">
-        <div>423</div>
+      <div className="flex flex-row bg-slate-100 gap-10 py-5 px-10 max-w-4xl">
+        <div className="flex flex-col justify-center items-center gap-2">
+          <p>423</p>
+          <ArrowUpIcon size={20} />
+        </div>
         <div>N</div>
         <div>
-          <div>Company Name</div>
-          <div>Comment</div>
+          <div>Nike</div>
+          <div>
+            I really Liked Nike a lot. The store was friendly and the people
+            there were reallynice. I just wish they had that one shoe Ive been
+            looking for.
+          </div>
         </div>
       </div>
     </section>
