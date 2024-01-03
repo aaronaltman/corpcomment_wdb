@@ -3,7 +3,7 @@ import React from "react";
 
 export default function SingleListItem() {
   return (
-    <section>
+    <>
       <div className="flex flex-row bg-slate-100 gap-10 py-5 px-10 max-w-4xl">
         <div className="flex flex-col justify-center items-center gap-2">
           <p>423</p>
@@ -19,6 +19,6 @@ export default function SingleListItem() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
