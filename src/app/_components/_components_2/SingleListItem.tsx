@@ -4,7 +4,7 @@ import React from "react";
 export default function SingleListItem() {
   return (
     <>
-      <div className="flex flex-row bg-slate-100 gap-10 py-5 px-10 max-w-4xl rounded-md">
+      <div className="flex flex-row bg-slate-100 gap-10 py-5 px-10 max-w-4xl rounded-md hover:scale-105 transition-all hover:my-2">
         <div className="flex flex-col justify-center items-center gap-2">
           <p>423</p>
           <ArrowUpIcon size={20} />
