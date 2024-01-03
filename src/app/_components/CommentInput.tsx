@@ -1,7 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -36,44 +44,36 @@ export default function CommentInput({
   };
   return (
     <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className="flex flex-col justify-center items-center py-10"
-      >
+      <form className="space-y-4 max-w-lg mx-auto pt-12">
         <FormField
           control={form.control}
           name="companyName"
           render={({ field }) => (
             <FormItem>
-              <label>Company Name</label>
+              <FormLabel>Company Name</FormLabel>
               <FormControl>
-                <Input placeholder="...Enter The Company Name" {...field} />
+                <Input placeholder="Company Name" {...field} />
               </FormControl>
+              <FormDescription>This is the name of the company</FormDescription>
+              <FormMessage />
+              <FormField
+                control={form.control}
+                name="comment"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Comment</FormLabel>
+                    <FormControl>
+                      <Textarea placeholder="Your comment here..." {...field} />
+                    </FormControl>
+                    <FormDescription>Add your comment</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="comment"
-          render={({ field }) => (
-            <FormItem>
-              <label>Comment</label>
-              <FormControl>
-                <Textarea
-                  className="w-1/2"
-                  {...field}
-                  placeholder="...Enter Your Comment"
-                />
-              </FormControl>
-            </FormItem>
-          )}
-        />
-        <Button
-          className="w-1/2 pt-2 pb-2 bg-green-700 mt-3 rounded-sm"
-          type="submit"
-        >
-          Submit
-        </Button>
+        <Button type="submit">Submit</Button>
       </form>
     </Form>
   );

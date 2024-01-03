@@ -27,11 +27,9 @@ export default function SubmitForm() {
             <FormItem>
               <FormLabel>Company Name</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Company Name" {...field} />
               </FormControl>
-              <FormDescription>
-                This is your public display name.
-              </FormDescription>
+              <FormDescription>This is the name of the company</FormDescription>
               <FormMessage />
             </FormItem>
           )}

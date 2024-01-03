@@ -1,6 +1,6 @@
 import InputAndList from "./_components/InputAndList";
 import prisma from "@/lib/db/prisma";
-import SubmitForm from "./_components/SubmitForm";
+import ListContainer from "./_components/_components_2/ListContainer";
 
 export default async function Home() {
   const allComments = await prisma.corpComment.findMany({
@@ -11,8 +11,8 @@ export default async function Home() {
   return (
     <main>
       <InputAndList />
+      <ListContainer />
       {JSON.stringify(allComments)}
-      <SubmitForm />
     </main>
   );
 }
