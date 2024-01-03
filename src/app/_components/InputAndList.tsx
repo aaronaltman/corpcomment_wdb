@@ -7,14 +7,16 @@ import CommentList from "./CommentList";
 
 export default function InputAndList() {
   const [comment, setComment] = useState("");
-  const [comments, setComments] = useState([]);
+  const [comments, setComments] = useState([] as string[]);
 
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setComment(comment);
+    handleComments();
   };
 
-  const handleComments = [...comments, comment];
+  const handleComments = () => {
+    setComments([...comments, comment]);
+  };
 
   return (
     <>
@@ -24,7 +26,7 @@ export default function InputAndList() {
           comment={comment}
           setComment={setComment}
         />
-        <CommentList comment={comment} />
+        <CommentList comments={comments} /> {/* Pass comments here */}
       </Container>
     </>
   );

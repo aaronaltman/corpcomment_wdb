@@ -13,6 +13,7 @@ export default function CommentInput({
 }: CommentInputProps) {
   return (
     <form
+      action={"#"}
       onSubmit={handleOnSubmit}
       className="flex flex-col justify-center items-center py-10"
     >
@@ -22,7 +23,6 @@ export default function CommentInput({
         }}
         className="w-1/2"
         typeof="text"
-        required
         value={comment}
       />
       <button
