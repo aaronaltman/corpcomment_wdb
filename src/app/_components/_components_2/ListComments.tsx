@@ -5,11 +5,7 @@ import SingleListItem from "./SingleListItem";
 import prisma from "@/lib/db/prisma";
 
 export default async function ListComments() {
-  const allComments = await prisma.corpComment.findMany({
-    where: {
-      companyName: "name",
-    },
-  });
+  const allComments = await prisma.corpComment.findMany();
 
   return (
     <div className="flex flex-col justify-center items-center mt-10 py-10 bg-slate-800 mb-10 shadow-xl rounded-lg">
