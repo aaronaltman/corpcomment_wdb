@@ -19,6 +19,9 @@ export async function POST(req: Request) {
     return Response.json({ comment: theComment }, { status: 200 });
   } catch (error) {
     console.error(error);
-    return Response.json({ error: "Internal Server Error" }, { status: 500 });
+    return Response.json(
+      { error: "Internal Server Error by ME" },
+      { status: 500 }
+    );
   }
 }
