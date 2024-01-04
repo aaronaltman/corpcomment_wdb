@@ -5,16 +5,11 @@ import Container from "@/app/_components/Container";
 import AddCommentDialog from "./_components/AddCommentDialog";
 
 export default async function page() {
-  const allComments = await prisma.corpComment.findMany({
-    where: {
-      companyName: "",
-    },
-  });
   return (
     <div>
       <Container>
         <AddCommentDialog />
-        {JSON.stringify(allComments)}
+        {/* this is where the comments go prisma client to database */}
       </Container>
     </div>
   );

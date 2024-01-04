@@ -32,7 +32,7 @@ export default function AddCommentDialog() {
   }
 
   return (
-    <div className="max-w-md mx-auto pt-5">
+    <div className="max-w-md mx-auto py-12">
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <FormField
