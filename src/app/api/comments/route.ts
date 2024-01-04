@@ -13,6 +13,7 @@ export async function POST(req: Request) {
       data: {
         companyName: companyName,
         comment: comment,
+        createdAt: new Date(),
       },
     });
     return Response.json({ comment: theComment }, { status: 200 });
