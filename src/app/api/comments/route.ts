@@ -9,6 +9,14 @@ export async function POST(req: Request) {
       return Response.json({ error: parseResult.error }, { status: 400 });
     }
     const { companyName, comment } = parseResult.data;
+
+    if (!companyName || !comment) {
+      return Response.json(
+        { error: "Company Name and Comment are required" },
+        { status: 400 }
+      );
+    }
+
     const theComment = await prisma.corpComment.create({
       data: {
         companyName,
