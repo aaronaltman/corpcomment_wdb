@@ -7,10 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model corp_comments {
+model corpComment {
   id          String   @id @default(auto()) @map("_id") @db.ObjectId
   comment     String
   companyName String
-  createdAt   DateTime @db.Date
-  updatedAt   DateTime @db.Date
+  createdAt   DateTime @default(now()) @db.Date
+  updatedAt   DateTime @updatedAt @db.Date
+
+  @@map("corp_comments")
 }

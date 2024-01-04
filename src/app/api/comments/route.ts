@@ -11,8 +11,8 @@ export async function POST(req: Request) {
     const { companyName, comment } = parseResult.data;
     const theComment = await prisma.corpComment.create({
       data: {
-        companyName: companyName,
-        comment: comment,
+        companyName,
+        comment,
       },
     });
     return Response.json({ comment: theComment }, { status: 200 });
