@@ -21,11 +21,7 @@ export default function InputAndList() {
   return (
     <>
       <Container>
-        <CommentInput
-          handleOnSubmit={handleOnSubmit}
-          comment={comment}
-          setComment={setComment}
-        />
+        <CommentInput />
         <CommentList comments={comments} /> {/* Pass comments here */}
       </Container>
     </>
