@@ -9,7 +9,6 @@ export default async function page() {
     <div>
       <Container>
         <AddCommentDialog />
-        {/* this is where the comments go prisma client to database */}
       </Container>
     </div>
   );
