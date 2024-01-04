@@ -9,10 +9,10 @@ export async function POST(req: Request) {
       return Response.json({ error: parseResult.error }, { status: 400 });
     }
     const { companyName, comment } = parseResult.data;
-    const theComment = prisma.corpComment.create({
+    const theComment = await prisma.corpComment.create({
       data: {
-        companyName,
-        comment,
+        companyName: companyName,
+        comment: comment,
       },
     });
     return Response.json({ comment: theComment }, { status: 200 });
