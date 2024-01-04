@@ -38,6 +38,9 @@ export default function AddCommentDialog() {
       if (!reponse.ok) {
         throw new Error("something went wrong" + reponse.statusText);
       }
+      {
+        console.log("response is ok");
+      }
       form.reset();
       router.refresh();
     } catch (error) {
