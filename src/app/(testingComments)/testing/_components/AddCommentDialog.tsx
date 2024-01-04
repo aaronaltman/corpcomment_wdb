@@ -17,8 +17,10 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import LoadingButton from "./LoadingButton";
+import { useRouter } from "next/navigation";
 
 export default function AddCommentDialog() {
+  const router = useRouter();
   const form = useForm<CreateCommentInput>({
     resolver: zodResolver(createCommentSchema),
     defaultValues: {
@@ -28,7 +30,20 @@ export default function AddCommentDialog() {
   });
 
   async function onSubmit(input: CreateCommentInput) {
-    alert(JSON.stringify(input));
+    try {
+      const reponse = await fetch("/api/comments", {
+        method: "POST",
+        body: JSON.stringify(input),
+      });
+      if (!reponse.ok) {
+        throw new Error("something went wrong" + reponse.statusText);
+      }
+      form.reset();
+      router.refresh();
+    } catch (error) {
+      console.error(error);
+      alert(`something went wrong. PLEASE TRY AGAIN  - Error is ${error}`);
+    }
   }
 
   return (
