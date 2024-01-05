@@ -24,7 +24,9 @@ export default async function SingleListItem({
           <p>{upVoteCount}</p>
           <ArrowUpIcon size={20} />
         </div>
-        <div>{badgeLetter}</div>
+        <div className="flex justify-center items-center border border-black/20 p-4">
+          {badgeLetter}
+        </div>
         <div>
           <div>{corpComment?.companyName}</div>
           <div>{corpComment?.comment}</div>
