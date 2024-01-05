@@ -15,7 +15,9 @@ export default async function ListComments() {
           <SingleListItem key={corpComment.id} corpComment={corpComment} />
         ))}
         {allComments.length == 0 && (
-          <div className="text-white text-4xl py-2 mb-6">No Comments</div>
+          <div className="text-white text-4xl py-2 mb-6">
+            No Comments - please add a comment
+          </div>
         )}
       </ul>
     </div>
