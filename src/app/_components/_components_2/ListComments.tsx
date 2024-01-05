@@ -14,6 +14,9 @@ export default async function ListComments() {
         {allComments.map((corpComment) => (
           <SingleListItem key={corpComment.id} corpComment={corpComment} />
         ))}
+        {allComments.length == 0 && (
+          <div className="text-white text-4xl py-2 mb-6">No Comments</div>
+        )}
       </ul>
     </div>
   );
