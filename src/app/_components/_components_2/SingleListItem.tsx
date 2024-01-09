@@ -25,7 +25,7 @@ export default async function SingleListItem({
     <>
       <div className="flex flex-row my-2 bg-slate-100 gap-12 py-5 px-10 max-w-4xl rounded-md hover:scale-105 transition-all hover:my-2">
         <MyButton />
-        <p className="flex justify-center items-center text-2xl bg-slate-300 border border-black/20 p-4">
+        <p className="flex justify-center items-center text-xl bg-slate-200 border border-black/20 p-4">
           {badgeLetter}
         </p>
         <div>
